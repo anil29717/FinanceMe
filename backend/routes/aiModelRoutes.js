@@ -48,27 +48,7 @@ router.get("/api/transactions/analysis", async (req, res) => {
 });
 
 
-// POST Route to get investment advice from Gemini API
-router.post("/investment-advice", async (req, res) => {
-    try {
-      const transactions = req.body.transactions;
-  
-      if (!transactions || transactions.length === 0) {
-        return res.status(400).json({ message: "No transactions provided" });
-      }
-  
-      // 📌 Replace this with the actual Gemini AI API URL
-      const geminiResponse = await axios.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${AIzaSyBPBm3Cz5OE4YuP_dvjujC5LglGbpJdb6U}", {
-        transactions,
-      });
-  
-      res.json({ advice: geminiResponse.data.suggestions });
-      console.log(res.json);
-    } catch (error) {
-      console.error("Error fetching investment advice:", error);
-      res.status(500).json({ message: "Failed to get investment advice" });
-    }
-  });
+
   
 
 module.exports = router;
