@@ -22,7 +22,7 @@ const FinanceDashboard = () => {
             setSalary(storedUser.salary || 0);
             setFund(storedUser.fund || 0);
 
-            const response = await fetch(`http://localhost:5000/api/users/transactions/${userId}`);
+            const response = await fetch(`https://financebus-be9o.onrender.com/api/users/transactions/${userId}`);
             if (!response.ok) throw new Error("Failed to fetch transactions");
 
             const data = await response.json();

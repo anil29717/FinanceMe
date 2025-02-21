@@ -26,7 +26,7 @@ const AnalysisReport = () => {
       };
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/transactions/analysis")
+        fetch("https://financebus-be9o.onrender.com/api/transactions/analysis")
             .then(response => response.json())
             .then(data => {
                 console.log("API Response:", data);

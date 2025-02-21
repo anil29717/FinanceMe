@@ -52,7 +52,7 @@ function DashboardPage() {
 
       console.log("Fetching transactions for User ID:", userId);
 
-      const response = await fetch(`http://localhost:5000/api/users/transactions/${userId}`);
+      const response = await fetch(`https://financebus-be9o.onrender.com/api/users/transactions/${userId}`);
 
       if (!response.ok) {
         throw new Error("Failed to fetch transactions");
@@ -96,7 +96,7 @@ function DashboardPage() {
     console.log(userId);
 
     try {
-      const response = await fetch(`http://localhost:5000/api/users/${userId}/transactions/add`, {
+      const response = await fetch(`https://financebus-be9o.onrender.com/api/users/${userId}/transactions/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -137,7 +137,7 @@ function DashboardPage() {
   //Analysis funtion
   const analyzeTransactions = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/ai-analysis/${userId}`);
+      const response = await fetch(`https://financebus-be9o.onrender.com/api/ai-analysis/${userId}`);
       const data = await response.json();
       console.log("AI Analysis Result:", data);
     } catch (error) {

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Slider = () => {
   const images = [
@@ -10,6 +11,7 @@ const Slider = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,7 +27,7 @@ const Slider = () => {
         <h1 className="text-4xl font-bold text-black mb-4">Welcome to AI Financial Advisor</h1>
         <p className="text-gray-600 mt-0 text-lg font-bold">Plan smarter, save better, and secure your future—starting today!</p>
         <p className="text-gray-600 mt-2 text-lg">Get personalized insights on budgeting, investments, and debt management. Analyze your income, expenses, and savings to unlock your true financial potential.</p>
-        <button className="py-3 px-4 bg-black text-md mt-4 text-white font-bold rounded-lg">
+        <button onClick={() => navigate('/login')} className="py-3 px-4 bg-black text-md mt-4 text-white font-bold rounded-lg">
           Get Started
         </button>
       </div>

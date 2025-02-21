@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const API_URL_TRANSACTION = 'http://localhost:5000/api/transactions';
+const API_URL_TRANSACTION = 'https://financebus-be9o.onrender.com/api/transactions';
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://financebus-be9o.onrender.com/api";
 
 export const registerUser = async (userData) => {
   try {
@@ -38,7 +38,7 @@ export const fetchTransactions = async () => {
 
 const analyzeTransactions = async () => {
   try {
-    const response = await fetch("http://your-backend-url.com/analyze-transactions", {
+    const response = await fetch("https://financebus-be9o.onrender.com/analyze-transactions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -55,7 +55,7 @@ const analyzeTransactions = async () => {
 };
 
 
-const BACK_URL = "http://localhost:5000"; // Change this for production
+const BACK_URL = "https://financebus-be9o.onrender.com"; // Change this for production
 
 // Fetch all goals
 export const getGoals = async () => {

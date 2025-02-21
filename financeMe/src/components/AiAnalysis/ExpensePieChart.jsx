@@ -18,7 +18,7 @@ const TransactionBarChart = () => {
           throw new Error("User ID not found in localStorage");
         }
 
-        const response = await axios.get(`http://localhost:5000/api/users/transactions/${userId}`);
+        const response = await axios.get(`https://financebus-be9o.onrender.com/api/users/transactions/${userId}`);
         if (response.status !== 200) {
           throw new Error("Failed to fetch transactions");
         }
