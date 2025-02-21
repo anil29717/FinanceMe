@@ -20,7 +20,7 @@ const InvestmentAdvice = () => {
       }
 
       // Fetch user's transactions
-      const response = await axios.get(`http://localhost:5000/api/users/transactions/${userId}`);
+      const response = await axios.get(`https://financebus-be9o.onrender.com/api/users/transactions/${userId}`);
       if (response.status !== 200) {
         throw new Error("Failed to fetch transactions");
       }
@@ -28,7 +28,7 @@ const InvestmentAdvice = () => {
       const transactions = response.data.transactions || [];
 
       // Send transactions to Gemini API for advice
-      const geminiResponse = await axios.post("http://localhost:5000/api/gemini/investment-advice", {
+      const geminiResponse = await axios.post("https://financebus-be9o.onrender.com/api/gemini/investment-advice", {
         transactions,
       });
 
