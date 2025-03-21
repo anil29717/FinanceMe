@@ -19,7 +19,7 @@ const BalanceSummary = () => {
       
       const fund = storedUser.fund;
       
-      const response = await fetch(`https://financebus-be9o.onrender.com/api/users/transactions/${userId}`);
+      const response = await fetch(`https://financeme-iou2.onrender.com/api/users/transactions/${userId}`);
       if (!response.ok) throw new Error("Failed to fetch transactions");
   
       const data = await response.json();

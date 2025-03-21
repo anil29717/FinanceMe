@@ -13,7 +13,7 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://financebus-be9o.onrender.com/api/users/login', {
+      const response = await axios.post('https://financeme-iou2.onrender.com/api/users/login', {
         email,
         password
       });
