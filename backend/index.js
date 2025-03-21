@@ -17,9 +17,8 @@ const port = process.env.PORT || 5000;
 // Middleware
 app.use(express.json());
 app.use(cors({
-  origin: 'https://finance-frontend-phi.vercel.app/', // Update with your frontend URL
-  methods: 'GET,POST,PUT,DELETE',
-  allowedHeaders: 'Content-Type,Authorization'
+  credentials: true,
+  origin: process.env.VITE_FRONTEND_URL
 }));
 
 // Connect to MongoDB
